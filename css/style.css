@@ -1,0 +1,842 @@
+/* GLOBAL */
+
+body {
+    margin: 0;
+}
+
+
+/* Mise en forme pour tous les titres */
+
+.heading h2 {
+    display: inline-block;
+    position: relative;
+    left: 34%;
+    width: 30%;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 2em;
+    background: linear-gradient(#000 40%, #222 58%, #000 1%);
+    color: #fff;
+    margin: 3em 0;
+    padding: 2ex;
+    border-radius: 50px 0 50px 0;
+    box-shadow: -2px 5px 3px #4285F4;
+}
+
+.bkg {
+    background-color: #C00;
+    border-radius: 50px 0 50px 0;
+    box-shadow: -2px 3px 6px #4285F4;
+}
+
+
+/* Marges */
+
+.year,
+.type,
+.project,
+.experience,
+.training {
+    position: relative;
+    padding: .5em;
+    margin: 1em;
+}
+
+
+/* EN-TETE */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(#C00, #000);
+    padding-bottom: 20px;
+    padding-top: 20px;
+    z-index: 1;
+}
+
+header h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFF;
+}
+
+
+/* Onglets */
+
+body>header>#menu>span {
+    margin: 6em;
+    padding: .5ex;
+    border-radius: .5em .5em 0 0;
+    box-shadow: inset 0 0 1em #555;
+    font-weight: bold;
+}
+
+body>header>#menu>span:hover {
+    cursor: pointer;
+    background-color: #BED7E3;
+    color: #000;
+    /* nom | durée | fonction | retard */
+    transition: all .6s ease .1;
+}
+
+.inactive {
+    background-color: #4285F4;
+    color: #f70808;
+}
+
+.active {
+    background-color: #f70808;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+
+/* PORTRAIT */
+
+#portrait #photo {
+    display: flex;
+    justify-content: center;
+}
+
+#portrait>#photo>img {
+    width: 240px;
+    margin-top: 180px;
+    margin-bottom: 10px;
+    box-shadow: -2px 3px 6px #4285F4;
+    border-radius: 25px 0 25px 0;
+}
+
+#portrait .legend {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 27px;
+    color: #333;
+}
+
+marquee {
+    border-radius: 1em;
+    box-shadow: inset 0 0 1em #555;
+}
+
+
+/* PROJET WEB */
+
+.blockProject {
+    margin: 0 150px;
+}
+
+.blockProject span {
+    display: inline-block;
+    font-size: 1.25em;
+    color: #fff;
+}
+
+.blockProject .year {
+    font-weight: bold;
+    background: linear-gradient(#000 40%, #222 58%, #000 1%);
+    left: 10%;
+    box-shadow: -2px 3px 6px #4285F4;
+    border-radius: 25px 0 25px 0;
+}
+
+.blockProject .project {
+    vertical-align: middle;
+    font-weight: bold;
+    left: 10%;
+}
+
+
+/* EXPERIENCE PROFESSIONNELLE */
+
+.blockExperience {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    margin: 0 150px;
+}
+
+.blockExperience span {
+    display: inline-block;
+    left: 30%;
+    font-size: 1.25em;
+    color: #fff;
+}
+
+.blockExperience .experience {
+    font-weight: bold;
+    left: 10%;
+}
+
+.blockExperience .year {
+    font-weight: bold;
+    background: linear-gradient(#000 40%, #222 58%, #000 1%);
+    left: 10%;
+    box-shadow: -2px 3px 6px #4285F4;
+    border-radius: 25px 0 25px 0;
+}
+
+
+/* COMPETENCES */
+
+.blockSkill {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    margin: 0 150px;
+}
+
+.blockSkill span {
+    display: inline-block;
+    left: 30%;
+    font-size: 1.25em;
+    color: #fff;
+}
+
+.blockSkill .type {
+    width: 13%;
+    font-weight: bold;
+    background: linear-gradient(#000 40%, #222 58%, #000 1%);
+    left: 10%;
+    box-shadow: -2px 3px 6px #4285F4;
+    border-radius: 25px 0 25px 0;
+}
+
+.blockSkill .bar {
+    font-weight: bold;
+    margin-top: 0.5em;
+    padding-top: 0.5em;
+    left: 5%;
+}
+
+
+/* On construit le corps des progress-bar */
+
+.progress-bar {
+    width: 30em;
+    height: .5em;
+    padding: 2px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: inset 0 1px 2px #000;
+    margin: 0 150px;
+}
+
+
+/* On affiche la barre bleue en avant en utilisant la pseudo class before*/
+
+.progress-bar:before {
+    content: '';
+    display: block;
+}
+
+
+/* On crée la barre de progression avec la pseudo classe et before avec la propriété content vide
+                        pour pouvoir afficher la barre */
+
+#technoHtmlCss .progress-bar:before {
+    width: 20em;
+    height: .5em;
+    background: #4285F4;
+    border-radius: 12px;
+    box-shadow: inset 0 1px 0px rgba(255, 255, 255, 0.918);
+    left: 5%;
+}
+
+#technoJs .progress-bar:before {
+    width: 25em;
+    height: .5em;
+    background: #4285F4;
+    border-radius: 12px;
+    box-shadow: inset 0 1px 0px rgba(255, 255, 255, 0.918);
+}
+
+#technoPhp .progress-bar:before {
+    width: 15em;
+    height: .5em;
+    background: #4285F4;
+    border-radius: 12px;
+    box-shadow: inset 0 1px 0px rgba(255, 255, 255, 0.918);
+}
+
+#technoSql .progress-bar:before {
+    width: 18em;
+    height: .5em;
+    background: #4285F4;
+    border-radius: 12px;
+    box-shadow: inset 0 1px 0px rgba(255, 255, 255, 0.918);
+}
+
+#technoLinux .progress-bar:before {
+    width: 10em;
+    height: .5em;
+    background: #4285F4;
+    border-radius: 12px;
+    box-shadow: inset 0 1px 0px rgba(255, 255, 255, 0.918);
+}
+
+.blockSkill .blue {
+    margin-right: 1em;
+}
+
+
+/* FORMATION */
+
+.blockTraining {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    margin: 0 150px;
+}
+
+.blockTraining span {
+    display: inline-block;
+    left: 30%;
+    font-size: 1.25em;
+    color: #fff;
+}
+
+.blockTraining .training {
+    font-weight: bold;
+    left: 10%;
+}
+
+.blockTraining .year {
+    font-weight: bold;
+    background: linear-gradient(#000 40%, #222 58%, #000 1%);
+    left: 10%;
+    box-shadow: -2px 3px 6px #4285F4;
+    border-radius: 25px 0 25px 0;
+}
+
+
+/* LANGUES */
+
+.blockLanguage heading {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 110px;
+}
+
+.country img {
+    width: 400px;
+    height: 300px;
+    margin-left: 7%;
+    box-shadow: -2px 3px 6px #4285F4;
+    border-radius: 25px 0 25px 0;
+}
+
+.blockLanguage .country {
+    position: relative;
+    font-weight: bold;
+    margin: 0.5em;
+    padding: 0.5em;
+    left: 2%;
+}
+
+
+/* LOISIRS */
+
+.blockLeisure heading {
+    margin: 0 110px;
+}
+
+.blockLeisure .contentLeisure {
+    display: flex;
+    margin-left: 30%;
+}
+
+.listLeisure {
+    width: 35%;
+}
+
+.blockImage img {
+    position: relative;
+    left: 12em;
+    width: 8em;
+}
+
+.blockLeisure li {
+    padding-right: 50px;
+    list-style: none;
+}
+
+.blockLeisure span {
+    display: inline-block;
+    text-align: end;
+    font-size: 1.25em;
+    color: #fff;
+}
+
+.blockLeisure .listLeisure .type {
+    font-weight: bold;
+    color: #fff;
+    margin: 0.5em;
+    padding: 0.5em;
+    left: 5%;
+    list-style: none;
+    text-align: right;
+}
+
+
+/* CONTACT */
+
+footer {
+    margin: 0 150px;
+    margin-bottom: 20px;
+}
+
+#firstContactLine {
+    display: flex;
+    color: #fff;
+}
+
+#secondContactLine {
+    display: flex;
+    color: #fff;
+}
+
+#firstContactLine img,
+#secondContactLine,
+img {
+    width: 5em;
+}
+
+#firstContactLine #adress {
+    padding-right: 50em;
+    padding-left: 10em;
+    margin-top: 1em;
+}
+
+#firstContactLine #linkedin,
+#github {
+    margin-top: 1em;
+    padding-right: 1em;
+}
+
+#secondContactLine #smartphone {
+    padding-right: 62em;
+    padding-left: 10em;
+    padding-bottom: 1em;
+    margin-top: 1em;
+}
+
+#secondContactLine #mail {
+    margin-top: 1em;
+    padding-bottom: 1em;
+}
+
+
+/* MEDIA QUERIES POUR FORMATS: exemple IPHONE 6/7/8 ET LA SERIE PLUS */
+
+@media screen and (max-width: 415px) {
+    header {
+        padding: 0%;
+    }
+    header h1 {
+        font-size: 1em;
+    }
+    body>header>#menu>span {
+        display: block;
+        width: 55%;
+        font-size: 14px;
+        text-align: center;
+        margin: 10px 21%;
+    }
+    .heading h2 {
+        left: 6%;
+        width: 70%;
+        margin: 1em -.3em;
+        padding: 1ex 3ex;
+    }
+    #portrait>#photo>img {
+        width: 45%;
+        margin-left: -1%;
+    }
+    #portrait {
+        margin-top: 165px;
+    }
+    .legend>marquee {
+        width: 50%;
+        margin-left: -.5em;
+    }
+    .country img {
+        display: block;
+        margin-left: 25%;
+        width: 50%;
+        height: 30%;
+    }
+    .blockProject,
+    .blockExperience,
+    .blockSkill,
+    .blockTraining,
+    .blockLanguage,
+    .blockLeisure,
+    .blockContact {
+        margin: 0 1em;
+        font-size: 1.25ex;
+    }
+    .blockProject .project,
+    .blockExperience .experience,
+    .blockTraining .training {
+        vertical-align: middle;
+        left: 2%;
+    }
+    .blockSkill span.type {
+        width: 40%;
+        text-align: center;
+        margin-bottom: 0px;
+    }
+    /* Corps de la progress-bar */
+    .progress-bar {
+        width: 16em;
+        margin-left: 2em;
+    }
+    #technoHtmlCss .progress-bar:before {
+        width: 20ex;
+    }
+    #technoJs .progress-bar:before {
+        width: 25ex;
+    }
+    #technoPhp .progress-bar:before {
+        width: 15ex;
+    }
+    #technoSql .progress-bar:before {
+        width: 18ex;
+    }
+    #technoLinux .progress-bar:before {
+        width: 10ex;
+    }
+    .blockSkill .bkg {
+        padding-bottom: 10px;
+    }
+    .blockLeisure {
+        margin-right: 5%;
+        margin-left: 5%;
+        font-size: 1.25ex;
+    }
+    .listLeisure {
+        left: 2%;
+        width: 90%;
+    }
+    .listLeisure {
+        margin-left: -35%;
+    }
+    .blockImage img {
+        position: relative;
+        left: 1em;
+        width: 7.5em;
+    }
+    footer {
+        margin: 0 5%;
+        margin-bottom: 20px;
+    }
+    #firstContactLine img,
+    #secondContactLine img {
+        width: 3em;
+    }
+    #firstContactLine #adress {
+        width: 50%;
+        padding-right: 1em;
+        padding-left: 4em;
+        margin-top: 1em;
+    }
+    #secondContactLine #smartphone {
+        padding-right: 13em;
+        padding-left: 4em;
+    }
+}
+
+
+/* MEDIA QUERIES POUR FORMATS TABLETTES ET MOINS*/
+
+@media screen and (min-width: 416px) AND (max-width: 770px) {
+    header {
+        padding: 0%;
+    }
+    header h1 {
+        font-size: 1.5em;
+    }
+    body>header>#menu>span {
+        display: block;
+        width: 40%;
+        font-size: 14px;
+        text-align: center;
+        margin: 10px 30%;
+    }
+    .heading h2 {
+        left: 10%;
+        width: 70%;
+        margin: 1em -.3em;
+        padding: 1ex 3ex;
+    }
+    #portrait>#photo>img {
+        width: 30%;
+    }
+    #portrait {
+        margin-top: 165px;
+        margin-left: 1%;
+    }
+    .legend>marquee {
+        width: 50%;
+        margin-left: -.5em;
+    }
+    .country img {
+        display: block;
+        margin-left: 30%;
+        width: 40%;
+        height: 30%;
+    }
+    .blockProject,
+    .blockExperience,
+    .blockSkill,
+    .blockTraining,
+    .blockLanguage,
+    .blockLeisure,
+    .blockContact {
+        margin: 0 1em;
+        font-size: 1.5ex;
+    }
+    .blockProject .project,
+    .blockExperience .experience,
+    .blockTraining .training {
+        vertical-align: middle;
+        font-weight: bold;
+        left: 8%;
+    }
+    .blockSkill span.type {
+        width: 20%;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    /* Corps de la progress-bar */
+    .progress-bar {
+        width: 16em;
+        margin-left: 6em;
+    }
+    #technoLinux {
+        margin-bottom: 20px;
+    }
+    #technoHtmlCss .progress-bar:before {
+        width: 20ex;
+    }
+    #technoJs .progress-bar:before {
+        width: 25ex;
+    }
+    #technoPhp .progress-bar:before {
+        width: 15ex;
+    }
+    #technoSql .progress-bar:before {
+        width: 18ex;
+    }
+    #technoLinux .progress-bar:before {
+        width: 10ex;
+    }
+    .blockLeisure {
+        margin: 0 20%;
+        font-size: 1.25ex;
+    }
+    .listLeisure {
+        left: 2%;
+        width: 90%;
+        margin-left: -35%;
+    }
+    .blockImage img {
+        position: relative;
+        left: 1em;
+        width: 7.5em;
+    }
+    footer {
+        margin: 0 5%;
+        margin-bottom: 20px;
+    }
+    #firstContactLine img,
+    #secondContactLine img {
+        width: 3em;
+    }
+    #firstContactLine #adress {
+        padding-right: 20em;
+        padding-left: 5em;
+        margin-top: 1em;
+    }
+    #secondContactLine #smartphone {
+        padding-right: 32em;
+        padding-left: 5em;
+    }
+}
+
+
+/* MEDIA QUERIES POUR FORMATS 13" ET MOINS*/
+
+@media screen and (min-width: 771px) AND (max-width: 1289px) {
+    header {
+        padding: 0%;
+    }
+    header h1 {
+        font-size: 1.5em;
+    }
+    body>header>#menu>span {
+        display: block;
+        width: 30%;
+        font-size: 14px;
+        text-align: center;
+        margin: 10px 35%;
+    }
+    .heading h2 {
+        left: 10%;
+        width: 70%;
+        margin: 1em -.3em;
+        padding: 1ex 3ex;
+    }
+    #portrait>#photo>img {
+        width: 200px;
+    }
+    #portrait {
+        margin-top: 165px;
+        margin-left: 1%;
+    }
+    .legend>marquee {
+        width: 40%;
+        margin-left: -.5em;
+    }
+    .country img {
+        width: 20%;
+        height: 30%;
+    }
+    .blockProject,
+    .blockExperience,
+    .blockSkill,
+    .blockTraining,
+    .blockLanguage,
+    .blockLeisure,
+    .blockContact {
+        margin: 0 1em;
+        font-size: 1.5ex;
+    }
+    .blockProject .project,
+    .blockExperience .experience,
+    .blockTraining .training {
+        vertical-align: middle;
+        left: 8%;
+    }
+    .blockSkill span.type {
+        width: 20%;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    /* Corps de la progress-bar */
+    .progress-bar {
+        width: 16em;
+        margin-left: 6em;
+    }
+    #technoLinux {
+        margin-bottom: 20px;
+    }
+    #technoHtmlCss .progress-bar:before {
+        width: 20ex;
+    }
+    #technoJs .progress-bar:before {
+        width: 25ex;
+    }
+    #technoPhp .progress-bar:before {
+        width: 15ex;
+    }
+    #technoSql .progress-bar:before {
+        width: 18ex;
+    }
+    #technoLinux .progress-bar:before {
+        width: 10ex;
+    }
+    .blockLeisure {
+        margin: 0 20%;
+        font-size: 1.25ex;
+    }
+    .listLeisure {
+        left: 2%;
+        width: 90%;
+        margin-left: -35%;
+    }
+    .blockImage img {
+        position: relative;
+        left: 1em;
+        width: 7.5em;
+    }
+    footer {
+        margin: 0 5%;
+        margin-bottom: 20px;
+    }
+    #firstContactLine img,
+    #secondContactLine img {
+        width: 3em;
+    }
+    #firstContactLine #adress {
+        padding-right: 20em;
+        padding-left: 5em;
+        margin-top: 1em;
+    }
+    #secondContactLine #smartphone {
+        padding-right: 32em;
+        padding-left: 5em;
+    }
+}
+
+@media screen and (min-width: 1290px) AND (max-width: 1600px) {
+    body>header>#menu>span {
+        text-align: center;
+        margin-right: .5em;
+        margin-left: 4.5em;
+        padding: .5em .5em;
+    }
+    header h1 {
+        margin-bottom: 35px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #FFF;
+    }
+    header {
+        padding-bottom: 50px;
+    }
+    .heading h2 {
+        left: 32.5%;
+        font-size: 2em;
+        margin: 1.5em 0;
+        padding: 2ex;
+    }
+    #portrait>#photo>img {
+        width: 12%;
+        margin-top: 220px;
+    }
+    #firstContactLine #adress {
+        padding-right: 30em;
+        padding-left: 10em;
+    }
+    #secondContactLine #smartphone {
+        padding-right: 42em;
+        padding-left: 10em;
+        padding-bottom: 1em;
+    }
+    .country img {
+        width: 350px;
+        height: 250px;
+        margin-left: 6%;
+    }
+}
+
+@media screen and (min-width: 1601px) AND (max-width: 2000px) {
+    body>header>#menu>span {
+        text-align: center;
+        margin-right: 1em;
+        margin-left: 7em;
+        padding: .5em .5em;
+    }
+    .heading h2 {
+        left: 32.5%;
+        font-size: 2em;
+        margin: 1em 0;
+        padding: 2ex;
+    }
+}
